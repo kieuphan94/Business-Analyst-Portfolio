@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Tracker — Sleep · English · PSPO-II · IELTS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2A4A;
+    --ink2:#33446B;
+    --paper:#FBFAF7;
+    --card:#FFFFFF;
+    --line:#E4E1D9;
+    --line2:#D2CFC6;
+    --muted:#6B7280;
+    --faint:#F1EFE9;
+    --accent:#2E5BBA;
+    --done:#2F9E7E;
+    --miss:#E8B4B0;
+    --sleep:#4F46E5;
+    --english:#D97706;
+    --pspo:#2563EB;
+    --ielts:#0D9488;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Be Vietnam Pro',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    padding:18px 14px 60px;
+    max-width:840px;
+    margin:0 auto;
+  }
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  /* ---------- Header ---------- */
+  header{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+  h1{font-size:clamp(22px,5vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+  h1 span{color:var(--accent)}
+  .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .today-pill{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;
+    background:var(--ink);color:#fff;padding:7px 12px;border-radius:8px;white-space:nowrap
+  }
+
+  .rule{
+    font-size:12.5px;color:var(--ink2);background:#EEF2FB;border:1px solid #D7E1F5;
+    border-radius:10px;padding:9px 12px;margin:14px 0 18px;
+  }
+  .rule b{color:var(--accent)}
+
+  /* ---------- Today card ---------- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:18px;
+    box-shadow:0 1px 0 rgba(27,42,74,.03),0 8px 24px -18px rgba(27,42,74,.25)}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .eyebrow .date{color:var(--accent)}
+
+  .habit{
+    display:flex;align-items:center;gap:12px;padding:12px;border:1.5px solid var(--line);
+    border-radius:12px;margin-bottom:9px;cursor:pointer;transition:.15s;background:#fff;user-select:none
+  }
+  .habit:hover{border-color:var(--line2)}
+  .habit:last-child{margin-bottom:0}
+  .habit.done{background:#F1FAF6;border-color:#BFE6D6}
+  .check{
+    width:26px;height:26px;border-radius:8px;border:2px solid var(--line2);flex:0 0 auto;
+    display:grid;place-items:center;transition:.15s;background:#fff
+  }
+  .habit.done .check{background:var(--done);border-color:var(--done)}
+  .check svg{width:15px;height:15px;stroke:#fff;stroke-width:3.2;fill:none;opacity:0;transition:.15s}
+  .habit.done .check svg{opacity:1}
+  .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+  .h-body{flex:1;min-width:0}
+  .h-name{font-weight:600;font-size:15px}
+  .h-meta{font-size:11.5px;color:var(--muted);margin-top:1px}
+  .h-meta .tag{background:var(--faint);border-radius:5px;padding:1px 6px;font-weight:600;color:var(--ink2)}
+  .streak{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--english);white-space:nowrap}
+  .open-btn{
+    font-family:'Be Vietnam Pro';font-size:12.5px;font-weight:600;text-decoration:none;
+    color:#fff;background:var(--ink);padding:7px 13px;border-radius:8px;white-space:nowrap;transition:.15s
+  }
+  .open-btn:hover{background:var(--accent)}
+  .wake{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;width:62px;text-align:center;
+    border:1.5px solid var(--line);border-radius:7px;padding:5px;color:var(--ink)
+  }
+  .wake::placeholder{color:#B7B3A9}
+
+  /* ---------- Grid ---------- */
+  .grid-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+  table{border-collapse:collapse;width:100%;min-width:560px}
+  th,td{padding:0;text-align:center}
+  .lbl{text-align:left;font-size:12.5px;font-weight:600;white-space:nowrap;padding:4px 10px 4px 2px}
+  .lbl .dot{display:inline-block;margin-right:6px;vertical-align:middle}
+  .daynum{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);font-weight:500;padding-bottom:5px}
+  .daynum.wk{color:var(--accent);font-weight:700}
+  .cell{width:17px;height:17px}
+  .box{
+    width:14px;height:14px;border-radius:4px;margin:1.5px auto;border:1.5px solid var(--faint);
+    background:#fff;cursor:pointer;transition:.1s
+  }
+  .box.future{background:var(--faint);border-color:var(--faint);cursor:default;opacity:.5}
+  .box.miss{background:#fff;border-color:var(--miss)}
+  .box.today{box-shadow:0 0 0 2px var(--ink)}
+  .grid-foot{font-size:11px;color:var(--muted);margin-top:8px;display:flex;gap:16px;flex-wrap:wrap}
+  .grid-foot span{display:inline-flex;align-items:center;gap:5px}
+  .lg{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  /* ---------- Stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:13px 12px}
+  .stat .top{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--ink2)}
+  .stat .num{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;margin:6px 0 1px;letter-spacing:-.02em}
+  .stat .of{font-size:12px;color:var(--muted);font-weight:500}
+  .stat .pct{height:5px;background:var(--faint);border-radius:3px;margin-top:9px;overflow:hidden}
+  .stat .pct i{display:block;height:100%;border-radius:3px;transition:.4s}
+  .stat .sk{font-size:11px;color:var(--muted);margin-top:7px}
+  .stat .sk b{font-family:'JetBrains Mono',monospace;color:var(--english)}
+
+  .combo{
+    background:var(--ink);color:#fff;border-radius:13px;padding:14px 16px;display:flex;
+    justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:8px
+  }
+  .combo .l{font-size:13px;font-weight:500;opacity:.85}
+  .combo .l b{display:block;font-size:13px;font-weight:700;opacity:1;margin-bottom:2px}
+  .combo .r{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700}
+  .combo .r small{font-size:14px;opacity:.6}
+
+  footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+  .save{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .save i{width:7px;height:7px;border-radius:50%;background:var(--done);display:inline-block}
+  .reset{font-size:12px;font-weight:600;color:var(--muted);background:none;border:1px solid var(--line);
+    padding:7px 13px;border-radius:8px;cursor:pointer;font-family:inherit;transition:.15s}
+  .reset:hover{color:#C0392B;border-color:#E8B4B0}
+
+  @media(max-width:560px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .open-btn{padding:7px 11px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>DAILY <span>TRACKER</span></h1>
+    <div class="sub">Sleep · English · PSPO-II · IELTS — gộp 1 chỗ, 1 tab duy nhất.</div>
+  </div>
+  <div class="today-pill" id="todayPill">—</div>
+</header>
+
+<div class="rule">⚑ <b>Quy tắc chống lan man:</b> mở đúng trang này. Việc nào làm thì bấm "Mở" → xong tick lại đây. Không mở bừa 5 tab.</div>
+
+<!-- TODAY -->
+<div class="card">
+  <div class="eyebrow">Hôm nay · <span class="date" id="todayDate">—</span></div>
+  <div id="todayHabits"></div>
+</div>
+
+<!-- STATS -->
+<div class="stats" id="stats"></div>
+
+<div class="combo">
+  <div class="l"><b>Ngày đạt full combo</b>Cả 4 việc cùng xong trong 1 ngày</div>
+  <div class="r"><span id="comboNum">0</span><small>/30</small></div>
+</div>
+
+<!-- GRID -->
+<div class="card">
+  <div class="eyebrow">30 ngày · 27/06 → 26/07/2026</div>
+  <div class="grid-wrap">
+    <table id="grid"></table>
+  </div>
+  <div class="grid-foot">
+    <span><i class="lg" style="background:var(--done)"></i> Xong</span>
+    <span><i class="lg" style="background:#fff;border:1.5px solid var(--miss)"></i> Bỏ lỡ</span>
+    <span><i class="lg" style="background:var(--faint)"></i> Chưa tới</span>
+    <span style="color:var(--ink)">⬚ Bấm ô để sửa ngày cũ</span>
+  </div>
+</div>
+
+<footer>
+  <div class="save"><i></i> Tự động lưu trên máy này (mở file bằng trình duyệt).</div>
+  <button class="reset" id="reset">Xoá toàn bộ dữ liệu</button>
+</footer>
+
+<script>
+const START = new Date(2026,5,27); // 27/06/2026
+const DAYS = 30;
+const KEY = 'daily-tracker-combo-v1';
+
+const HABITS = [
+  {id:'sleep',   name:'Ngủ trước 22:30', color:'var(--sleep)',   meta:'Mục tiêu giờ ngủ · ghi giờ thức', wake:true},
+  {id:'english', name:'Tiếng Anh daily', color:'var(--english)', meta:'Học chung: từ vựng / nghe / nói'},
+  {id:'pspo',    name:'PSPO-II',          color:'var(--pspo)',    meta:'Ôn cert Product Owner', link:'https://kieuphan94.github.io/PSPO-II/'},
+  {id:'ielts',   name:'IELTS',            color:'var(--ielts)',   meta:'Luyện đề · <span class="tag">thuộc English</span>', link:'https://kieuphan94.github.io/IELTs/'},
+];
+
+const MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+function dateOf(i){const d=new Date(START);d.setDate(d.getDate()+i);return d;}
+function ddmm(d){return ('0'+d.getDate()).slice(-2)+'/'+MONTHS[d.getMonth()];}
+function todayIndex(){
+  const now=new Date();now.setHours(0,0,0,0);
+  const s=new Date(START);s.setHours(0,0,0,0);
+  return Math.round((now-s)/86400000);
+}
+
+let data = load();
+function load(){
+  try{const r=JSON.parse(localStorage.getItem(KEY));if(r&&r.done)return r;}catch(e){}
+  const done={};HABITS.forEach(h=>done[h.id]=Array(DAYS).fill(false));
+  return {done, wake:Array(DAYS).fill('')};
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){}}
+
+const TI = todayIndex();
+
+// ---- Today card ----
+function renderToday(){
+  const el=document.getElementById('todayHabits');
+  if(TI<0||TI>=DAYS){
+    el.innerHTML='<div style="font-size:13px;color:var(--muted)">Hôm nay nằm ngoài chu kỳ 30 ngày (27/06→26/07). Mở lại trong khoảng đó nhé.</div>';
+    return;
+  }
+  el.innerHTML='';
+  HABITS.forEach(h=>{
+    const on=data.done[h.id][TI];
+    const row=document.createElement('div');
+    row.className='habit'+(on?' done':'');
+    let right='';
+    if(h.link) right=`<a class="open-btn" href="${h.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Mở ↗</a>`;
+    else if(h.wake) right=`<input class="wake" id="wake" placeholder="thức" value="${data.wake[TI]||''}" maxlength="5" onclick="event.stopPropagation()">`;
+    row.innerHTML=`
+      <span class="check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span>
+      <span class="dot" style="background:${h.color}"></span>
+      <div class="h-body">
+        <div class="h-name">${h.name}</div>
+        <div class="h-meta">${h.meta}</div>
+      </div>
+      ${right}`;
+    row.onclick=()=>{data.done[h.id][TI]=!data.done[h.id][TI];save();renderAll();};
+    el.appendChild(row);
+  });
+  const w=document.getElementById('wake');
+  if(w) w.addEventListener('input',e=>{data.wake[TI]=e.target.value;save();});
+}
+
+// ---- Grid ----
+function renderGrid(){
+  const t=document.getElementById('grid');
+  let head='<tr><th class="lbl"></th>';
+  for(let i=0;i<DAYS;i++){
+    const d=dateOf(i),wk=d.getDay()===1; // Monday marker
+    head+=`<th class="daynum${wk?' wk':''}">${('0'+d.getDate()).slice(-2)}</th>`;
+  }
+  head+='</tr>';
+  let body='';
+  HABITS.forEach(h=>{
+    body+=`<tr><td class="lbl"><span class="dot" style="background:${h.color}"></span>${h.name}</td>`;
+    for(let i=0;i<DAYS;i++){
+      let cls='box';
+      if(i>TI) cls+=' future';
+      else if(data.done[h.id][i]) cls='box';
+      else cls+=' miss';
+      if(i===TI) cls+=' today';
+      const style=data.done[h.id][i]?`background:${h.color};border-color:${h.color}`:'';
+      body+=`<td class="cell"><div class="${cls}" style="${style}" data-h="${h.id}" data-i="${i}"></div></td>`;
+    }
+    body+='</tr>';
+  });
+  t.innerHTML=head+body;
+  t.querySelectorAll('.box:not(.future)').forEach(b=>{
+    b.onclick=()=>{const h=b.dataset.h,i=+b.dataset.i;data.done[h][i]=!data.done[h][i];save();renderAll();};
+  });
+}
+
+// ---- Stats ----
+function curStreak(arr){
+  let s=0,start=Math.min(TI,DAYS-1);
+  if(start<0)return 0;
+  // if today not done yet, count from yesterday
+  if(!arr[start])start--;
+  for(let i=start;i>=0;i--){if(arr[i])s++;else break;}
+  return s;
+}
+function renderStats(){
+  const el=document.getElementById('stats');el.innerHTML='';
+  const upto=Math.max(0,Math.min(TI+1,DAYS)); // elapsed days incl today
+  HABITS.forEach(h=>{
+    const arr=data.done[h.id];
+    const cnt=arr.filter(Boolean).length;
+    const pct=Math.round(cnt/DAYS*100);
+    const sk=curStreak(arr);
+    const d=document.createElement('div');d.className='stat';
+    d.innerHTML=`
+      <div class="top"><span class="dot" style="background:${h.color}"></span>${h.name.replace('Ngủ trước ','Ngủ ').replace('Tiếng Anh daily','Tiếng Anh')}</div>
+      <div class="num">${cnt}<span class="of">/30</span></div>
+      <div class="pct"><i style="width:${pct}%;background:${h.color}"></i></div>
+      <div class="sk">🔥 streak <b>${sk}</b> ngày</div>`;
+    el.appendChild(d);
+  });
+  let combo=0;
+  for(let i=0;i<DAYS;i++) if(HABITS.every(h=>data.done[h.id][i])) combo++;
+  document.getElementById('comboNum').textContent=combo;
+}
+
+function renderAll(){renderToday();renderGrid();renderStats();}
+
+// init
+const t=new Date();
+document.getElementById('todayPill').textContent=ddmm(t)+'/2026';
+document.getElementById('todayDate').textContent=(TI>=0&&TI<DAYS)?('Ngày '+(TI+1)+' · '+ddmm(dateOf(TI))):ddmm(t);
+renderAll();
+
+document.getElementById('reset').onclick=()=>{
+  if(confirm('Xoá hết dữ liệu tracker? Không khôi phục được.')){
+    localStorage.removeItem(KEY);data=load();renderAll();
+  }
+};
+</script>
+</body>
+</html>
