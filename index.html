@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Tracker — Sleep · English · PSPO-II · IELTS</title>
+<title>Daily Tracker — Sleep · English · PSPO-II · IELTS · Web Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -25,6 +25,7 @@
     --english:#13A8D8;
     --pspo:#2563EB;
     --ielts:#13A383;
+    --webport:#F97316;
     --star:#F97316;
     --warn:#F43F5E;
     --glass:rgba(255,255,255,.46);
@@ -304,7 +305,7 @@
 <header>
   <div>
     <h1>DAILY <span>TRACKER</span></h1>
-    <div class="sub">Sleep · English · PSPO-II · IELTS — gộp 1 chỗ, 1 tab duy nhất.</div>
+    <div class="sub">Sleep · English · PSPO-II · IELTS · Web Portfolio — gộp 1 chỗ, 1 tab duy nhất.</div>
   </div>
   <div class="today-pill" id="todayPill">—</div>
 </header>
@@ -321,7 +322,7 @@
 <div class="stats" id="stats"></div>
 
 <div class="combo">
-  <div class="l"><b>Ngày đạt full combo</b>Cả 4 việc cùng xong trong 1 ngày</div>
+  <div class="l"><b>Ngày đạt full combo</b>Cả 5 việc cùng xong trong 1 ngày</div>
   <div class="r"><span id="comboNum">0</span><small>/30</small></div>
 </div>
 
@@ -356,6 +357,7 @@ const HABITS = [
   {id:'english', name:'Tiếng Anh daily', color:'var(--english)', meta:'Học chung: từ vựng / nghe / nói'},
   {id:'pspo',    name:'PSPO-II',          color:'var(--pspo)',    meta:'Ôn cert Product Owner', link:'https://kieuphan94.github.io/PSPO-II/'},
   {id:'ielts',   name:'IELTS',            color:'var(--ielts)',   meta:'Luyện đề · <span class="tag">thuộc English</span>', link:'https://kieuphan94.github.io/IELTs/'},
+  {id:'webport', name:'Web Portfolio',    color:'var(--webport)', meta:'Cập nhật portfolio web · nội dung / UI / case study'},
 ];
 
 const SEED = [
@@ -387,6 +389,9 @@ function load(){
   try{
     const r=JSON.parse(localStorage.getItem(KEY));
     if(r&&r.done){
+      HABITS.forEach(h=>{
+        if(!r.done[h.id]) r.done[h.id]=Array(DAYS).fill(false);
+      });
       if(!r.wake) r.wake=Array(DAYS).fill('');
       if(!r.pf) r.pf=SEED.map(s=>({n:s.n,hi:s.hi,done:false}));
       return r;
