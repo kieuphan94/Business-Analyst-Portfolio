@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -11,27 +11,41 @@
 :root{
   --ink:#12305D;--ink2:#31547F;--paper:#F6FCFF;--line:#D7ECF8;--line2:#A6DDF3;--muted:#62748C;
   --faint:#EAF7FB;--accent:#1677FF;--accent2:#22C7A9;--done:#21B889;--miss:#FFB7BE;
-  --sleep:#4F7BFF;--skill:#13A8D8;--build:#F97316;--job:#8B5CF6;--warn:#F43F5E;
+  --sleep:#4F7BFF;--english:#13A8D8;--pspo:#1E40AF;--build:#F97316;--job:#8B5CF6;--warn:#F43F5E;
   --glass-line:rgba(255,255,255,.78)
 }
 *{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%}
 body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:radial-gradient(circle at 12% 4%,rgba(34,199,169,.20),transparent 28%),radial-gradient(circle at 92% 8%,rgba(22,119,255,.18),transparent 30%),linear-gradient(180deg,#F9FDFF 0%,var(--paper) 48%,#F2FBF8 100%);color:var(--ink);line-height:1.5;padding:18px 14px 60px;max-width:1180px;margin:0 auto;overflow-x:hidden}
 body:before{content:"";position:fixed;width:600px;height:600px;right:-250px;top:-250px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 72px,rgba(22,119,255,.12) 73px 116px,transparent 117px 150px);pointer-events:none;z-index:0}
-.mono{font-family:'JetBrains Mono',monospace}.app-shell{display:grid;grid-template-columns:minmax(250px,310px) minmax(0,840px);gap:18px;align-items:start;position:relative;z-index:1}.tracker-main{min-width:0}.side{position:sticky;top:18px}
+.mono{font-family:'JetBrains Mono',monospace}
+ 
+/* --- LAYOUT: checklist top, grid, stats, then sidebar theory below --- */
+.top-strip{position:relative;z-index:1;margin-bottom:18px}
+.app-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,310px);gap:18px;align-items:start;position:relative;z-index:1}.tracker-main{min-width:0}.side{position:sticky;top:18px}
+ 
 .card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.68),rgba(255,255,255,.30) 48%,rgba(225,249,255,.34));border:1px solid var(--glass-line);border-radius:18px;padding:16px;margin-bottom:18px;box-shadow:0 1px 0 rgba(255,255,255,.95) inset,0 24px 70px -40px rgba(22,119,255,.55);backdrop-filter:blur(28px) saturate(1.35);-webkit-backdrop-filter:blur(28px) saturate(1.35)}
 .card>*{position:relative;z-index:1}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:11px}.eyebrow .date{color:var(--accent)}
 header{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:4px}h1{font-size:clamp(23px,5vw,31px);font-weight:800;letter-spacing:-.03em;line-height:1.05}h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}.sub{font-size:12.5px;color:var(--muted);margin-top:4px}.today-pill{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;background:linear-gradient(135deg,var(--accent),#1F3E8A);color:#fff;padding:7px 12px;border-radius:8px;white-space:nowrap}
-.rule{font-size:12.5px;color:var(--ink2);background:linear-gradient(105deg,rgba(255,255,255,.62),rgba(229,247,255,.48),rgba(236,255,249,.44));border:1px solid var(--glass-line);border-radius:12px;padding:11px 13px;margin:14px 0 18px;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 44px -34px rgba(22,119,255,.75)}.rule b{color:var(--accent)}
-.rule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:8px}.rule-item{background:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.7);border-radius:9px;padding:7px 9px;font-size:11.5px}.rule-item b{display:block;font-size:11px;color:var(--ink);margin-bottom:1px}
+ 
+/* Combo banner */
+.combo-banner{background:linear-gradient(135deg,rgba(34,199,169,.18),rgba(22,119,255,.12));border:1px solid var(--glass-line);border-radius:16px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.combo-banner .label{font-size:14px;font-weight:700;color:var(--accent2)}.combo-banner .sublabel{font-size:11.5px;color:var(--muted)}.combo-banner .big{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:var(--accent)}.combo-banner .big span{font-size:14px;color:var(--muted)}
+ 
 /* Mission */
 .mission-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.mission-title{font-size:20px;font-weight:800;letter-spacing:-.02em}.mission-title span{color:var(--accent)}.mission-score{text-align:right}.mission-score .big{font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:700}.mission-score .small{font-size:10px;color:var(--muted);display:block}.bar{height:8px;background:#E7F3FF;border-radius:5px;overflow:hidden;margin:9px 0 14px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:5px;transition:.25s}
 .lane{border:1.5px solid var(--line);border-radius:13px;padding:11px 12px;margin-bottom:9px;background:rgba(255,255,255,.46);box-shadow:0 1px 0 rgba(255,255,255,.85) inset}.lane:last-child{margin-bottom:0}.lane.done{background:linear-gradient(90deg,rgba(240,255,248,.78),rgba(238,248,255,.62));border-color:#A9EAD8}.lane-head{display:flex;align-items:center;gap:9px}.dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.lane-name{font-size:14px;font-weight:700;flex:1}.check{width:23px;height:23px;border-radius:7px;border:2px solid var(--line2);display:grid;place-items:center;cursor:pointer;flex:0 0 auto;background:#fff}.lane.done .check{background:linear-gradient(135deg,var(--done),var(--accent2));border-color:var(--done)}.check svg{width:13px;height:13px;stroke:#fff;stroke-width:3.2;fill:none;opacity:0}.lane.done .check svg{opacity:1}.lane-meta{font-size:11.5px;color:var(--muted);margin:4px 0 0 32px}.lane-actions{display:flex;gap:7px;align-items:center;margin:8px 0 0 32px;flex-wrap:wrap}.mini-btn,.open-btn{font-family:inherit;font-size:11.5px;font-weight:700;border-radius:7px;padding:6px 9px;cursor:pointer;text-decoration:none}.mini-btn{color:var(--ink2);background:rgba(255,255,255,.72);border:1px solid var(--line)}.open-btn{color:#fff;background:linear-gradient(135deg,#1D4ED8,var(--accent));border:0}.input{font-family:'JetBrains Mono',monospace;font-size:11.5px;width:70px;text-align:center;border:1px solid var(--line2);border-radius:7px;padding:5px;background:#fff;color:var(--ink)}
-/* Side */
-.side h2{font-size:18px;font-weight:800}.side h2 span{color:var(--accent)}.side-note{font-size:11.5px;color:var(--muted);margin:4px 0 12px}.goal{padding:10px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.45);margin-bottom:8px}.goal b{font-size:12px}.goal p{font-size:11px;color:var(--muted);margin-top:2px}.pf-top{display:flex;justify-content:space-between;align-items:baseline;margin:12px 0 6px}.pf-top .big{font-family:'JetBrains Mono';font-size:25px;font-weight:700}.pf-top span:last-child{font-size:11px;color:var(--muted)}
+ 
 /* Stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}.stat{background:linear-gradient(145deg,rgba(255,255,255,.58),rgba(255,255,255,.28));border:1px solid var(--glass-line);border-radius:14px;padding:12px;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 44px -34px rgba(22,119,255,.55)}.stat .top{font-size:11.5px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px}.stat .num{font-family:'JetBrains Mono';font-size:25px;font-weight:700;margin:5px 0 1px}.stat .of{font-size:11px;color:var(--muted)}.stat .pct{height:5px;background:#E4F3FA;border-radius:3px;margin-top:8px;overflow:hidden}.stat .pct i{display:block;height:100%;border-radius:3px}.stat .sk{font-size:10.5px;color:var(--muted);margin-top:6px}
+ 
 /* Grid */
-.grid-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}.grid-card{background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(246,252,255,.90) 54%,rgba(237,250,255,.88));border-color:#BDE6F6}.grid-card .grid-wrap{background:rgba(255,255,255,.48);border-radius:12px;padding:6px}.grid-card table{border-collapse:collapse;width:100%;min-width:700px}.grid-card th,.grid-card td{padding:0;text-align:center}.lbl{text-align:left!important;font-size:11.5px;font-weight:600;white-space:nowrap;padding-right:8px!important}.daynum{font-family:'JetBrains Mono';font-size:8.5px;color:var(--muted);padding-bottom:5px}.daynum.wk{color:var(--accent);font-weight:700}.cell{width:18px;height:18px}.box{width:14px;height:14px;border-radius:4px;margin:1.5px auto;border:1.5px solid var(--faint);background:#fff;cursor:pointer}.box.future{background:var(--faint);border-color:var(--faint);cursor:default;opacity:.75}.box.miss{border-color:#FF9FAB}.box.today{box-shadow:0 0 0 2px var(--accent),0 0 0 5px rgba(22,119,255,.10)}.grid-foot{font-size:10.5px;color:var(--muted);margin-top:9px;display:flex;gap:13px;flex-wrap:wrap}
+.grid-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}.grid-card{background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(246,252,255,.90) 54%,rgba(237,250,255,.88));border-color:#BDE6F6}.grid-card .grid-wrap{background:rgba(255,255,255,.48);border-radius:12px;padding:6px}.grid-card table{border-collapse:collapse;width:100%;min-width:780px}.grid-card th,.grid-card td{padding:0;text-align:center}.lbl{text-align:left!important;font-size:11.5px;font-weight:600;white-space:nowrap;padding-right:8px!important}.daynum{font-family:'JetBrains Mono';font-size:8.5px;color:var(--muted);padding-bottom:5px}.daynum.wk{color:var(--accent);font-weight:700}.cell{width:18px;height:18px}.box{width:14px;height:14px;border-radius:4px;margin:1.5px auto;border:1.5px solid var(--faint);background:#fff;cursor:pointer}.box.future{background:var(--faint);border-color:var(--faint);cursor:default;opacity:.75}.box.miss{border-color:#FF9FAB}.box.today{box-shadow:0 0 0 2px var(--accent),0 0 0 5px rgba(22,119,255,.10)}.grid-foot{font-size:10.5px;color:var(--muted);margin-top:9px;display:flex;gap:13px;flex-wrap:wrap}
+ 
+/* Side */
+.rule{font-size:12.5px;color:var(--ink2);background:linear-gradient(105deg,rgba(255,255,255,.62),rgba(229,247,255,.48),rgba(236,255,249,.44));border:1px solid var(--glass-line);border-radius:12px;padding:11px 13px;margin:0 0 14px;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 44px -34px rgba(22,119,255,.75)}.rule b{color:var(--accent)}
+.rule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:8px}.rule-item{background:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.7);border-radius:9px;padding:7px 9px;font-size:11.5px}.rule-item b{display:block;font-size:11px;color:var(--ink);margin-bottom:1px}
+.side h2{font-size:18px;font-weight:800}.side h2 span{color:var(--accent)}.side-note{font-size:11.5px;color:var(--muted);margin:4px 0 12px}.goal{padding:10px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.45);margin-bottom:8px}.goal b{font-size:12px}.goal p{font-size:11px;color:var(--muted);margin-top:2px}
+ 
 /* Reflection */
 .reflection{display:grid;grid-template-columns:1fr 1fr;gap:10px}.reflection textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:10px;padding:9px;font-family:inherit;font-size:12px;color:var(--ink);background:rgba(255,255,255,.55);resize:vertical}.reflection label{font-size:11px;font-weight:700;color:var(--ink2);display:block;margin-bottom:4px}
 footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}.save{font-size:11.5px;color:var(--muted)}.reset{font-size:11.5px;font-weight:600;color:var(--muted);background:rgba(255,255,255,.5);border:1px solid var(--line);padding:7px 12px;border-radius:9px;cursor:pointer;font-family:inherit}
@@ -40,63 +54,49 @@ footer{display:flex;justify-content:space-between;align-items:center;gap:12px;fl
 </style>
 </head>
 <body>
-<div class="app-shell">
-<aside class="card side">
-  <h2>30 ngày <span>RESET</span></h2>
-  <div class="side-note">Mục tiêu không phải làm nhiều hơn. Mục tiêu là <b>không biến task nhỏ thành dự án lớn rồi chạy trốn.</b></div>
-
-  <div class="goal"><b>01 · Ship</b><p>Mỗi ngày 1 output đi ra ngoài: apply / portfolio / interview / post.</p></div>
-  <div class="goal"><b>02 · Skill</b><p>English + PSPO là dữ liệu luyện tập, không phải giấy phép để được apply.</p></div>
-  <div class="goal"><b>03 · Sleep</b><p>Neo bằng giờ thức; bedtime kéo dần về 22:30.</p></div>
-  <div class="goal"><b>04 · Restart</b><p>Bỏ task ≥48h → quay lại chỉ 10 phút. Không bù, không phạt.</p></div>
-
-  <div class="eyebrow" style="margin-top:15px">Portfolio Case · RELEASE 3/3</div>
-  <div class="pf-top"><span class="big" id="pfPct">0%</span><span id="pfCount">0/0</span></div>
-  <div class="bar"><i id="pfFill"></i></div>
-  <div id="pfMsg" style="font-size:11px;color:var(--done);margin-bottom:10px"></div>
-  <div id="pfList"></div>
-  <div style="font-size:10.5px;color:var(--muted);margin-top:10px">⚠ Chỉ 3 tiêu chí. 3/3 = đủ để RELEASE. Không thêm ảnh, hook, polish hay tài liệu phụ để chặn việc ship.</div>
-</aside>
-
-<main class="tracker-main">
+ 
+<!-- ===== TOP STRIP: Header + Combo + Checklist + Grid + Stats — all above the fold ===== -->
+<div class="top-strip">
+ 
 <header>
-  <div><h1>30-DAY <span>RESET</span></h1><div class="sub">Ship · Sleep · Skill · Career — chống lan man bằng task nhỏ.</div></div>
+  <div><h1>30-DAY <span>RESET</span></h1><div class="sub">Sleep · English · PSPO · Portfolio — 4 việc, không chạy trốn.</div></div>
   <div class="today-pill" id="todayPill">—</div>
 </header>
-
-<div class="rule">
-  <b>LUẬT CHÍNH:</b> Task đã định nghĩa là gì thì chỉ được làm đúng kích thước đó.
-  <div class="rule-grid">
-    <div class="rule-item"><b>1 lỗi → 1 note</b> Không biến một lỗi thành tài liệu A4.</div>
-    <div class="rule-item"><b>1 test → dữ liệu</b> Sai = biết chỗ yếu, không quay lại học toàn bộ.</div>
-    <div class="rule-item"><b>≥48h bỏ → 10 phút</b> Chỉ restart, không “bù”.</div>
-    <div class="rule-item"><b>Output > preparation</b> Mỗi ngày phải có ít nhất 1 thứ được ship.</div>
-  </div>
+ 
+<!-- Combo banner -->
+<div class="combo-banner" style="margin-top:14px">
+  <div><div class="label">Ngày đạt full combo</div><div class="sublabel">Cả 4 việc cùng xong trong 1 ngày</div></div>
+  <div class="big" id="comboCount">0<span>/30</span></div>
 </div>
-
-<section class="card">
+ 
+<!-- TODAY CHECKLIST — first thing you interact with -->
+<section class="card" style="margin-bottom:14px">
   <div class="eyebrow">Hôm nay · <span class="date" id="todayDate">—</span></div>
   <div class="mission-top">
-    <div><div class="mission-title">3 lane, <span>không chạy trốn</span></div><div style="font-size:11.5px;color:var(--muted);margin-top:2px">Mỗi lane chỉ cần một output nhỏ. Full day = 3/3.</div></div>
-    <div class="mission-score"><div class="big" id="todayScore">0/3</div><span class="small">today output</span></div>
+    <div><div class="mission-title">4 lane, <span>không chạy trốn</span></div><div style="font-size:11.5px;color:var(--muted);margin-top:2px">Mỗi lane chỉ cần một output nhỏ. Full day = 4/4.</div></div>
+    <div class="mission-score"><div class="big" id="todayScore">0/4</div><span class="small">today output</span></div>
   </div>
   <div class="bar"><i id="todayFill"></i></div>
   <div id="todayLanes"></div>
 </section>
-
-<div class="stats" id="stats"></div>
-
-<section class="card">
-  <div class="eyebrow">Career scoreboard · 30 ngày</div>
-  <div class="stats" style="margin:0" id="careerStats"></div>
-</section>
-
+ 
+<!-- 30-DAY GRID — visible right after checklist -->
 <section class="card grid-card">
-  <div class="eyebrow">30 ngày · <span id="rangeLabel">11/08 → 09/09/2026</span></div>
+  <div class="eyebrow">30 ngày · <span id="rangeLabel">—</span></div>
   <div class="grid-wrap"><table id="grid"></table></div>
   <div class="grid-foot"><span>■ Xong</span><span>□ Bỏ lỡ</span><span>░ Chưa tới</span><span>⬚ Bấm ô để sửa ngày cũ</span></div>
 </section>
-
+ 
+<!-- STATS per habit -->
+<div class="stats" id="stats"></div>
+ 
+</div><!-- /top-strip -->
+ 
+<!-- ===== BOTTOM: sidebar theory + reflection side by side ===== -->
+<div class="app-shell">
+<main class="tracker-main">
+ 
+<!-- Daily debrief -->
 <section class="card">
   <div class="eyebrow">Daily debrief · chỉ 2 câu, không viết A4</div>
   <div class="reflection">
@@ -104,122 +104,116 @@ footer{display:flex;justify-content:space-between;align-items:center;gap:12px;fl
     <div><label>Điểm nào làm tôi muốn chạy trốn?</label><textarea id="escapeNote" placeholder="1 câu. Không phân tích dài. Chỉ ghi trigger."></textarea></div>
   </div>
 </section>
-
-<footer><div class="save">● Tự động lưu trên trình duyệt · Không cần hoàn hảo để tick.</div><button class="reset" id="reset">Xoá dữ liệu 30 ngày</button></footer>
+ 
+<footer><div class="save">● Tự động lưu trên máy này (mở file bằng trình duyệt).</div><button class="reset" id="reset">Xoá toàn bộ dữ liệu</button></footer>
 </main>
+ 
+<aside class="card side">
+  <h2>Luật <span>chống lan man</span></h2>
+  <div class="rule" style="margin-top:10px">
+    <b>LUẬT CHÍNH:</b> Task đã định nghĩa là gì thì chỉ được làm đúng kích thước đó.
+    <div class="rule-grid">
+      <div class="rule-item"><b>1 lỗi → 1 note</b> Không biến một lỗi thành tài liệu A4.</div>
+      <div class="rule-item"><b>1 test → dữ liệu</b> Sai = biết chỗ yếu, không quay lại học toàn bộ.</div>
+      <div class="rule-item"><b>≥48h bỏ → 10 phút</b> Chỉ restart, không "bù".</div>
+      <div class="rule-item"><b>Output > preparation</b> Mỗi ngày phải có ít nhất 1 thứ được ship.</div>
+    </div>
+  </div>
+  <div class="goal"><b>01 · Sleep</b><p>Neo bằng giờ ngủ 22:30. Không thức khuya bù việc.</p></div>
+  <div class="goal"><b>02 · English</b><p>10 từ + 1 bài nghe/đọc IELTS. Micro-session, không marathon.</p></div>
+  <div class="goal"><b>03 · PSPO-II</b><p>20 câu mock test. Sai thì ghi tối đa 3 lỗi rồi đi tiếp.</p></div>
+  <div class="goal"><b>04 · Portfolio</b><p>1 output: section / interview answer / apply / post. Không mở scope.</p></div>
+  <div class="side-note" style="margin-top:10px">Mục tiêu không phải làm nhiều hơn. Mục tiêu là <b>không biến task nhỏ thành dự án lớn rồi chạy trốn.</b></div>
+</aside>
 </div>
-
+ 
 <script>
 const START = new Date(2026,7,11); // 11/08/2026
 const DAYS = 30;
-const KEY = 'daily-reset-30d-v3';
-
+const KEY = 'daily-reset-30d-v4';
+ 
 const HABITS = [
-  {id:'sleep', name:'SLEEP · neo giờ thức', color:'var(--sleep)'},
-  {id:'skill', name:'SKILL · English / PSPO', color:'var(--skill)'},
-  {id:'build', name:'BUILD · portfolio / interview', color:'var(--build)'}
+  {id:'sleep',   name:'Ngủ trước 22:30',          color:'var(--sleep)'},
+  {id:'english', name:'Tiếng Anh daily + IELTS',  color:'var(--english)'},
+  {id:'pspo',    name:'PSPO-II',                   color:'var(--pspo)'},
+  {id:'build',   name:'Web Portfolio',             color:'var(--build)'}
 ];
-
-const PORTFOLIO = [
-  {n:'1. Problem + Decision · nói rõ vấn đề và vì sao chọn phương án',hi:true},
-  {n:'2. Solution + Artifact · có thứ nhìn thấy được để chứng minh cách giải',hi:true},
-  {n:'3. Result + Evidence · có kết quả định lượng hoặc bằng chứng trước/sau',hi:true}
-];
-
+ 
 function dateOf(i){const d=new Date(START);d.setDate(d.getDate()+i);return d}
 function ddmm(d){return ('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)}
 function todayIndex(){const n=new Date();n.setHours(0,0,0,0);const s=new Date(START);s.setHours(0,0,0,0);return Math.round((n-s)/86400000)}
 const TI=todayIndex();
-
+ 
 function load(){
   try{
     const r=JSON.parse(localStorage.getItem(KEY));
     if(r&&r.done){
       HABITS.forEach(h=>{if(!r.done[h.id])r.done[h.id]=Array(DAYS).fill(false);});
-      r.wake ||= Array(DAYS).fill(''); r.ship ||= Array(DAYS).fill(''); r.escape ||= Array(DAYS).fill('');
-      r.pf ||= PORTFOLIO.map(x=>({...x,done:false}));
-      r.apply ||= Array(DAYS).fill(0); r.post ||= Array(DAYS).fill(0); r.interview ||= Array(DAYS).fill(0);
+      r.ship ||= Array(DAYS).fill(''); r.escape ||= Array(DAYS).fill('');
       return r;
     }
   }catch(e){}
   const done={};HABITS.forEach(h=>done[h.id]=Array(DAYS).fill(false));
-  return {done,wake:Array(DAYS).fill(''),ship:Array(DAYS).fill(''),escape:Array(DAYS).fill(''),apply:Array(DAYS).fill(0),post:Array(DAYS).fill(0),interview:Array(DAYS).fill(0),pf:PORTFOLIO.map(x=>({...x,done:false}))};
+  return {done,ship:Array(DAYS).fill(''),escape:Array(DAYS).fill('')};
 }
 let data=load();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}}
-
-function wakeTarget(i){
-  if(i<3)return '08:30';
-  if(i<6)return '08:00';
-  if(i<10)return '07:30';
-  if(i<15)return '07:00';
-  if(i<22)return '06:45';
-  return '06:30';
-}
-function bedTarget(i){
-  if(i<3)return '23:45';
-  if(i<6)return '23:30';
-  if(i<10)return '23:15';
-  if(i<15)return '23:00';
-  if(i<22)return '22:45';
-  return '22:30';
-}
+ 
 function currentDay(){return TI>=0&&TI<DAYS?TI:null}
-
 function setDone(id,val){if(currentDay()===null)return;data.done[id][TI]=val;save();renderAll()}
+ 
+function renderCombo(){
+  let count=0;
+  for(let i=0;i<=Math.min(TI,DAYS-1);i++){
+    if(HABITS.every(h=>data.done[h.id][i]))count++;
+  }
+  document.getElementById('comboCount').innerHTML=count+'<span>/30</span>';
+}
+ 
 function renderToday(){
   const el=document.getElementById('todayLanes');el.innerHTML='';
-  if(currentDay()===null){el.innerHTML='<div style="font-size:13px;color:var(--muted)">Hôm nay nằm ngoài chu kỳ 30 ngày. Tracker này chạy từ 11/08 đến 09/09/2026.</div>';return}
+  if(currentDay()===null){el.innerHTML='<div style="font-size:13px;color:var(--muted)">Hôm nay nằm ngoài chu kỳ 30 ngày.</div>';return}
   const i=TI;
   const rows=[
-    {h:HABITS[0],meta:`Wake target ${wakeTarget(i)} · bedtime target ${bedTarget(i)} · ưu tiên giờ thức`,extra:`<input class="input" id="wakeInput" placeholder="thức" value="${data.wake[i]||''}" maxlength="5">`},
-    {h:HABITS[1],meta:`Chỉ 1 micro-session: 10 từ + 1 test nhỏ HOẶC 20 câu PSPO. Sai thì ghi tối đa 3 lỗi rồi đi tiếp.`,extra:`<button class="mini-btn" data-inc="pspo">+1 PSPO</button><button class="mini-btn" data-inc="eng">+1 English</button>`},
-    {h:HABITS[2],meta:`Chỉ 1 output: 1 section portfolio / 1 interview answer / 1 application / 1 post. Không mở scope.`,extra:`<button class="mini-btn" data-inc="apply">+1 Apply</button><button class="mini-btn" data-inc="interview">+1 Interview</button><button class="mini-btn" data-inc="post">+1 Post</button>`}
+    {h:HABITS[0],meta:'Tắt màn hình trước 22:30. Không thức khuya bù việc.'},
+    {h:HABITS[1],meta:'10 từ mới + 1 bài nghe/đọc IELTS. Micro-session.'},
+    {h:HABITS[2],meta:'20 câu mock PSPO-II. Sai → ghi tối đa 3 lỗi rồi đi tiếp.'},
+    {h:HABITS[3],meta:'1 output: section portfolio / interview answer / apply / post.'}
   ];
-  rows.forEach(({h,meta,extra})=>{
+  rows.forEach(({h,meta})=>{
     const on=data.done[h.id][i];const row=document.createElement('div');row.className='lane'+(on?' done':'');
-    row.innerHTML=`<div class="lane-head"><span class="dot" style="background:${h.color}"></span><span class="lane-name">${h.name}</span><span class="check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span></div><div class="lane-meta">${meta}</div><div class="lane-actions">${extra}</div>`;
+    row.innerHTML=`<div class="lane-head"><span class="dot" style="background:${h.color}"></span><span class="lane-name">${h.name}</span><span class="check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span></div><div class="lane-meta">${meta}</div>`;
     row.querySelector('.check').onclick=()=>setDone(h.id,!on);el.appendChild(row);
   });
-  const w=document.getElementById('wakeInput');if(w)w.addEventListener('input',e=>{data.wake[i]=e.target.value;save()});
-  el.querySelectorAll('[data-inc]').forEach(b=>b.onclick=()=>{const k=b.dataset.inc;data[k][i]=(data[k][i]||0)+1;save();renderCareer()});
   document.getElementById('shipNote').value=data.ship[i]||'';document.getElementById('escapeNote').value=data.escape[i]||'';
-  const score=HABITS.filter(h=>data.done[h.id][i]).length;document.getElementById('todayScore').textContent=score+'/3';document.getElementById('todayFill').style.width=(score/3*100)+'%';
+  const score=HABITS.filter(h=>data.done[h.id][i]).length;
+  document.getElementById('todayScore').textContent=score+'/4';
+  document.getElementById('todayFill').style.width=(score/4*100)+'%';
 }
-
-function renderCareer(){
-  const c=document.getElementById('careerStats');c.innerHTML='';
-  const metrics=[
-    ['Apply',data.apply.reduce((a,b)=>a+b,0),'target 40','var(--job)'],
-    ['Interview',data.interview.reduce((a,b)=>a+b,0),'target 3–5','var(--build)'],
-    ['Public evidence',data.post.reduce((a,b)=>a+b,0),'target 4','var(--accent2)'],
-    ['Skill sessions',data.done.skill.filter(Boolean).length,'target 20','var(--skill)']
-  ];
-  metrics.forEach(([n,v,t,c])=>{const d=document.createElement('div');d.className='stat';d.innerHTML=`<div class="top"><span class="dot" style="background:${c}"></span>${n}</div><div class="num">${v}</div><div class="sk">${t}</div>`;cEl(c,d);});
-}
-function cEl(_,d){document.getElementById('careerStats').appendChild(d)}
-
+ 
 function streak(arr){let s=0,start=Math.min(TI,DAYS-1);if(start<0)return 0;if(!arr[start])start--;for(let i=start;i>=0;i--){if(arr[i])s++;else break}return s}
 function renderStats(){
   const el=document.getElementById('stats');el.innerHTML='';
-  HABITS.forEach(h=>{const arr=data.done[h.id],cnt=arr.filter(Boolean).length,pct=Math.round(cnt/DAYS*100),d=document.createElement('div');d.className='stat';d.innerHTML=`<div class="top"><span class="dot" style="background:${h.color}"></span>${h.name}</div><div class="num">${cnt}<span class="of">/30</span></div><div class="pct"><i style="width:${pct}%;background:${h.color}"></i></div><div class="sk">streak <b>${streak(arr)}</b> ngày</div>`;el.appendChild(d)});
+  HABITS.forEach(h=>{const arr=data.done[h.id],cnt=arr.filter(Boolean).length,pct=Math.round(cnt/DAYS*100),d=document.createElement('div');d.className='stat';d.innerHTML=`<div class="top"><span class="dot" style="background:${h.color}"></span>${h.name}</div><div class="num">${cnt}<span class="of">/30</span></div><div class="pct"><i style="width:${pct}%;background:${h.color}"></i></div><div class="sk">🔥 streak <b>${streak(arr)}</b> ngày</div>`;el.appendChild(d)});
 }
+ 
 function renderGrid(){
   const t=document.getElementById('grid');let head='<tr><th class="lbl"></th>';
   for(let i=0;i<DAYS;i++){const d=dateOf(i);head+=`<th class="daynum${d.getDay()===1?' wk':''}">${('0'+d.getDate()).slice(-2)}</th>`}head+='</tr>';
-  let body='';HABITS.forEach(h=>{body+=`<tr><td class="lbl"><span class="dot" style="background:${h.color};display:inline-block;margin-right:5px"></span>${h.name.split(' · ')[0]}</td>`;for(let i=0;i<DAYS;i++){let cls='box';if(i>TI)cls+=' future';else if(!data.done[h.id][i])cls+=' miss';if(i===TI)cls+=' today';const style=data.done[h.id][i]?`background:${h.color};border-color:${h.color}`:'';body+=`<td class="cell"><div class="${cls}" style="${style}" data-h="${h.id}" data-i="${i}"></div></td>`}body+='</tr>'});t.innerHTML=head+body;
+  let body='';HABITS.forEach(h=>{body+=`<tr><td class="lbl"><span class="dot" style="background:${h.color};display:inline-block;margin-right:5px"></span>${h.name}</td>`;for(let i=0;i<DAYS;i++){let cls='box';if(i>TI)cls+=' future';else if(!data.done[h.id][i])cls+=' miss';if(i===TI)cls+=' today';const style=data.done[h.id][i]?`background:${h.color};border-color:${h.color}`:'';body+=`<td class="cell"><div class="${cls}" style="${style}" data-h="${h.id}" data-i="${i}"></div></td>`}body+='</tr>'});t.innerHTML=head+body;
   t.querySelectorAll('.box:not(.future)').forEach(b=>b.onclick=()=>{data.done[b.dataset.h][+b.dataset.i]=!data.done[b.dataset.h][+b.dataset.i];save();renderAll()});
 }
-function renderPF(){
-  const list=document.getElementById('pfList');list.innerHTML='';data.pf.forEach((m,idx)=>{const r=document.createElement('div');r.className='lane'+(m.done?' done':'');r.style.padding='8px 9px';r.style.marginBottom='6px';r.innerHTML=`<div class="lane-head"><span class="check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><span class="lane-name" style="font-size:12px">${m.n}</span></div>`;r.onclick=()=>{m.done=!m.done;save();renderPF()};list.appendChild(r)});
-  const dn=data.pf.filter(x=>x.done).length,pc=Math.round(dn/data.pf.length*100);document.getElementById('pfPct').textContent=pc+'%';document.getElementById('pfCount').textContent=dn+'/'+data.pf.length;document.getElementById('pfFill').style.width=pc+'%';document.getElementById('pfMsg').textContent=pc===100?'✓ RELEASE — đủ 3 tiêu chí.':pc>=67?'→ Gần RELEASE — hoàn thành tiêu chí còn lại.':'';
-}
-function renderAll(){renderToday();renderStats();renderCareer();renderGrid();renderPF()}
-
-const now=new Date();document.getElementById('todayPill').textContent=ddmm(now)+'/2026';document.getElementById('todayDate').textContent=currentDay()!==null?`Ngày ${TI+1} · ${ddmm(dateOf(TI))}`:ddmm(now);document.getElementById('rangeLabel').textContent=ddmm(START)+' → '+ddmm(dateOf(DAYS-1))+'/2026';renderAll();
-
+ 
+function renderAll(){renderCombo();renderToday();renderStats();renderGrid()}
+ 
+const now=new Date();
+document.getElementById('todayPill').textContent=ddmm(now)+'/2026';
+document.getElementById('todayDate').textContent=currentDay()!==null?`Ngày ${TI+1} · ${ddmm(dateOf(TI))}`:ddmm(now);
+document.getElementById('rangeLabel').textContent=ddmm(START)+' → '+ddmm(dateOf(DAYS-1))+'/2026';
+renderAll();
+ 
 ['shipNote','escapeNote'].forEach(id=>document.getElementById(id).addEventListener('input',e=>{if(currentDay()!==null){data[id==='shipNote'?'ship':'escape'][TI]=e.target.value;save()}}));
 document.getElementById('reset').onclick=()=>{if(confirm('Xoá toàn bộ dữ liệu 30 ngày? Không khôi phục được.')){localStorage.removeItem(KEY);data=load();renderAll()}};
 </script>
 </body>
-</html>
+</html
