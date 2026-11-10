@@ -7,9 +7,13 @@
 
 *Specializing in large-scale internal enterprise systems, complex workflow optimization, and multi-source data consolidation.*
 
-[![Wix Portfolio](https://shields.io)](https://fk4dqe-my-site-od9w0ax5-phuongkieuphan.wix-vibe-site.com/)
-[![LinkedIn](https://shields.io)](https://www.linkedin.com/in/phuongkieuphan/)
-[![PSPO II Certified](https://shields.io)](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
+
+[![Wix Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Website-DCEBFA?style=for-the-badge&logo=googlechrome&logoColor=315B85)](https://fk4dqe-my-site-od9w0ax5-phuongkieuphan.wix-vibe-site.com/)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-DFEDE8?style=for-the-badge&logo=linkedin&logoColor=286B58)](https://www.linkedin.com/in/phuongkieuphan/)
+
+[![PSPO II Certified](https://img.shields.io/badge/PSPO%20II-Certified-F0E5F5?style=for-the-badge&logo=scrumalliance&logoColor=76518C)](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
+
 
 **Requirements Engineering • Process Modernization • BPMN 2.0 • Data Validation • Agile/Scrum**
 
