@@ -7,8 +7,10 @@
 
 *Chuyên sâu về kiến trúc hệ thống nội bộ quy mô lớn, tối ưu hóa quy trình vận hành phức tạp và hợp nhất dữ liệu phân mảnh.*
 
-[![GitHub](https://shields.io)](https://github.com)
-[![LinkedIn](https://shields.io)](https://linkedin.com)
+[![Wix Portfolio](https://shields.io)](https://vibe.wix.com/projects/a255e489-4a79-4bc1-9364-d0209b935e42/v/editor)
+[![LinkedIn](https://shields.io)](https://www.linkedin.com/in/phuongkieuphan/)
+[![PSPO II Credly Badge](https://shields.io)](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
+
 
 **Requirements Engineering • Process Modernization • BPMN 2.0 • Data Validation • Agile/Scrum**
 
