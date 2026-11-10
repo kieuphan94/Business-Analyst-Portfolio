@@ -7,10 +7,9 @@
 
 *Specializing in large-scale internal enterprise systems, complex workflow optimization, and multi-source data consolidation.*
 
-
-
-[Portfolio](https://fk4dqe-my-site-od9w0ax5-phuongkieuphan.wix-vibe-site.com/) · [LinkedIn](https://www.linkedin.com/in/phuongkieuphan/) · [PSPO II](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
-
+<a href="https://fk4dqe-my-site-od9w0ax5-phuongkieuphan.wix-vibe-site.com/" style="background:#24292E;color:white;padding:6px 12px;border-radius:6px;text-decoration:none;">Portfolio</a>
+<a href="https://www.linkedin.com/in/phuongkieuphan/" style="background:#2F62F6;color:white;padding:6px 12px;border-radius:6px;text-decoration:none;">LinkedIn</a>
+<a href="https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75" style="background:#DB61A2;color:white;padding:6px 12px;border-radius:6px;text-decoration:none;">PSPO II</a>
 
 **Requirements Engineering • Process Modernization • BPMN 2.0 • Data Validation • Agile/Scrum**
 
