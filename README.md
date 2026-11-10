@@ -7,7 +7,7 @@
 
 *Specializing in large-scale internal enterprise systems, complex workflow optimization, and multi-source data consolidation.*
 
-[![Wix Portfolio](https://shields.io)](https://vibe.wix.com/projects/a255e489-4a79-4bc1-9364-d0209b935e42/v/editor)
+[![Wix Portfolio](https://shields.io)](https://fk4dqe-my-site-od9w0ax5-phuongkieuphan.wix-vibe-site.com/)
 [![LinkedIn](https://shields.io)](https://www.linkedin.com/in/phuongkieuphan/)
 [![PSPO II Certified](https://shields.io)](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
 
