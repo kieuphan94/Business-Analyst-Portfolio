@@ -133,7 +133,7 @@ I am always open to exploring professional opportunities and strategic challenge
 
 - **GitHub:** https://github.com/kieuphan94/
 - **LinkedIn Profile:** https://www.linkedin.com/in/phuongkieuphan/
-- **Portfolio Site (Wix):** [View UX & Functional Layouts](https://vibe.wix.com/projects/a255e489-4a79-4bc1-9364-d0209b935e42/v/editor)
+- **Portfolio Site (Wix):** [View Case Study(https://my-site-od9w0ax5-phuongkieuphan.wix-vibe-site.com)
 - **Professional Credential:** [Verify PSPO II Certification on Credly](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
 
 ---
