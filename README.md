@@ -5,12 +5,11 @@
 
 **Senior Business Analyst | Systems Analyst | Product Owner**
 
-*Chuyên sâu về kiến trúc hệ thống nội bộ quy mô lớn, tối ưu hóa quy trình vận hành phức tạp và hợp nhất dữ liệu phân mảnh.*
+*Specializing in large-scale internal enterprise systems, complex workflow optimization, and multi-source data consolidation.*
 
 [![Wix Portfolio](https://shields.io)](https://vibe.wix.com/projects/a255e489-4a79-4bc1-9364-d0209b935e42/v/editor)
 [![LinkedIn](https://shields.io)](https://www.linkedin.com/in/phuongkieuphan/)
-[![PSPO II Credly Badge](https://shields.io)](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
-
+[![PSPO II](https://shields.io)](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
 
 **Requirements Engineering • Process Modernization • BPMN 2.0 • Data Validation • Agile/Scrum**
 
@@ -20,120 +19,122 @@
 
 ## 👋 Professional Overview
 
-Tôi là một **Business Analyst chuyên sâu về hệ thống lớn (Large-scale Internal Systems)** với hơn 5 năm kinh nghiệm thực chiến trong ngành Viễn thông và Công nghệ thông tin. Xuất phát điểm từ nền tảng Kỹ thuật (IT) kết hợp với tư duy UX (User Experience) nhạy bén, tôi tập trung giải quyết các bài toán lõi của doanh nghiệp: quy trình vận hành cồng kềnh, bất đối xứng thông tin và phân mảnh dữ liệu ở mặt trận tiền tuyến.
+I am a **Systems-focused Business Analyst** with over 5 years of hands-on experience in the Telecommunications and IT industries. Transitioning from a technical IT background and driven by a strong UX (User Experience) mindset, I specialize in architecting large-scale internal systems, eliminating operational bottlenecks, and resolving front-line data fragmentation.
 
-Các dự án trong Portfolio này chứng minh năng lực cốt lõi bao gồm:
-- **Phân tích cấu trúc:** Tách bạch bối cảnh/hành vi người dùng (Big-picture) và tương tác hệ thống chi tiết (Close-up) để tinh giản thao tác thừa.
-- **Thiết kế quy trình lõi:** Tái cấu trúc luồng vận hành quy mô lớn, xử lý triệt để các ngoại lệ dữ liệu (data exceptions).
-- **Hợp nhất & Đối soát:** Thiết kế các tính năng kiểm thử dữ liệu đa nguồn (multi-source data validation) và giải quyết tranh chấp nghiệp vụ tại hiện trường.
-- **Tư duy quản trị:** Tiếp cận bài toán dưới lăng kính của một người định hình tiêu chuẩn, luật lệ hệ thống để đảm bảo tính đồng bộ và mở rộng.
+This portfolio demonstrates my core competencies in:
+- **Structural Analysis:** Separating user context (Big-picture) from granular system interactions (Close-up) to streamline workflows and eliminate redundant operations.
+- **Core Process Design:** Re-engineering large-scale enterprise workflows to thoroughly handle complex data exceptions.
+- **Data Validation & Reconciliation:** Designing multi-source data validation features and field dispute resolution mechanisms for operational frontline technicians.
+- **Governance & Systems Leadership:** Approaching business challenges from the perspective of a system leader who defines rules, validation logic, and enterprise standards to ensure cross-functional scalability.
 
 ---
 
 ## 🚀 Featured Case Studies
 
-| Case Study | Phân Khúc Hệ Thống | Công Cụ & Khả Năng |
+| Case Study | System Domain | Primary Skills & Tools |
 |---|---|---|
-| [📱 01-mobix-fsm](./01-mobix-fsm) | Field Service Management (FSM) & Revenue Leakage | BPMN 2.0, VSM, Workflow Optimization |
-| [📊 02-customer-360](./02-customer-360) | Master Data Management & Data Consolidation | Data Flow Diagram (DFD), Data Modeling |
-| [🔁 03-quote-payment](./03-quote-payment) | Transaction Processing & Dispute Resolution | State Machine, Edge-Case Handling, Rules |
+| [📱 01-mobix-fsm](./01-mobix-fsm) | Field Service Management (FSM) & Revenue Leakage | BPMN 2.0, Value Stream Mapping (VSM), Process Optimization |
+| [📊 02-customer-360](./02-customer-360) | Master Data Management & Data Consolidation | Data Flow Diagram (DFD), System Architecture, Data Modeling |
+| [🔁 03-quote-payment](./03-quote-payment) | Transaction Processing & Dispute Resolution | State Machine, Edge-Case Handling, System Logic Rules |
 
 ---
 
-## 📱 Case Study 1: MobiX FSM — Tối Ưu Vận Hành Hiện Trường
+## 📱 Case Study 1: MobiX FSM — Field Service Optimization
 
-### Bài toán doanh nghiệp
-Hệ thống quản lý kỹ thuật viên hiện trường (FSM) gặp tình trạng rò rỉ doanh thu (revenue leakage) nghiêm trọng do dữ liệu giao dịch tại tiền tuyến không được khai thác và đối soát theo thời gian thực, dẫn đến tắc nghẽn quy trình phối hợp.
+### Business Challenge
+The frontline Field Service Management (FSM) ecosystem suffered from severe revenue leakage. Transactional data generated at the front line was unexploited and failed to reconcile in real time, causing massive coordination friction across technicians and central dispatchers.
 
-### Giải pháp & Kết quả giả lập
-Thiết kế lại toàn bộ quy trình phối hợp liên phòng ban thông qua sơ đồ BPMN 2.0 và luồng dữ liệu tự động, loại bỏ hoàn toàn các bước nhập liệu thủ công.
+### Solution & Illustrative Results
+Re-architected cross-functional workflows using BPMN 2.0 and automated data integration pipelines, completely replacing fragmented manual inputs.
 
-| Chỉ số đo lường (KPIs) | Kết quả đạt được |
+| Performance Indicators (KPIs) | Modeled Outcomes |
 |---|---:|
-| Giảm tỷ lệ rò rỉ doanh thu hiện trường | 45% |
-| Tốc độ điều phối kỹ thuật viên | Tăng 60% |
-| Thời gian đóng chu trình sự cố (Resolution Time) | Giảm từ 4h → 1.5h |
+| Frontline Revenue Leakage Reduction | 45% |
+| Technician Dispatch & Routing Efficiency | +60% |
+| Target Resolution Time (End-to-End Cycle) | 4h → 1.5h |
 
-*Chi tiết deliverable:* [📁 Khám phá thư mục dự án 01-mobix-fsm](./01-mobix-fsm)
+*Explore Deliverables:* [📁 View Project Folder (01-mobix-fsm)](./01-mobix-fsm)
 
 ---
 
-## 📊 Case Study 2: Customer 360 — Hợp Nhất Dữ Liệu Khách Hàng
+## 📊 Case Study 2: Customer 360 — Master Data Consolidation
 
-### Bài toán doanh nghiệp
-Dữ liệu thông tin khách hàng bị phân mảnh ở nhiều phân hệ cũ (Legacy systems: MobiX, Omni Agent, Customer Profile), gây ra hiện tượng trùng lặp, sai lệch thông tin và làm chậm tốc độ tra cứu của điều hành viên.
+### Business Challenge
+Customer master data was highly fragmented across isolated legacy modules (MobiX, Omni Agent, Customer Profile). This caused data duplication, record conflicts, and critical response delays for support agents.
 
-### Giải pháp & Kết quả giả lập
-Xây dựng mô hình dữ liệu tổng thể (To-Be Architecture), thiết kế cơ chế định danh khách hàng duy nhất (Golden Record) và chuẩn hóa luồng tra cứu thời gian thực.
+### Solution & Illustrative Results
+Designed a holistic To-Be data architecture, implemented a unique customer identity resolution mechanism (Golden Record), and standardized real-time data lookup flows.
 
-| Chỉ số đo lường (KPIs) | Kết quả đạt được |
+| Performance Indicators (KPIs) | Modeled Outcomes |
 |---|---:|
-| Tỷ lệ trùng lặp dữ liệu hồ sơ | Giảm từ 32% → < 1% |
-| Thời gian phản hồi cuộc gọi tra cứu thông tin | Giảm 70% |
-| Độ chính xác của báo cáo định danh hành vi | Đạt 99.4% |
+| Profile Record Duplication Rate | 32% → < 1% |
+| Customer Profile Lookup Response Time | -70% |
+| Behavioral Identity Reporting Accuracy | 99.4% |
 
-*Chi tiết deliverable:* [📁 Khám phá thư mục dự án 02-customer-360](./02-customer-360)
+*Explore Deliverables:* [📁 View Project Folder (02-customer-360)](./02-customer-360)
 
 ---
 
-## 🔁 Case Study 3: Quote & Payment — Quy Tắc Đối Soát Giao Dịch
+## 🔁 Case Study 3: Quote & Payment — Field Dispute Resolution
 
-### Bài toán doanh nghiệp
-Luồng báo giá và thanh toán phức tạp thường xuyên xảy ra lỗi ngoại lệ dữ liệu. Kỹ thuật viên hiện trường và hệ thống kế toán trung tâm mất rất nhiều thời gian xử lý tranh chấp thủ công do thiếu một bộ quy tắc logic nhất quán.
+### Business Challenge
+Complex quote-to-cash workflows frequently triggered structural data exceptions. Technicians and accounting teams lost hundreds of hours manually reconciling payment discrepancies due to the lack of centralized, automated system logic rules.
 
-### Giải pháp & Kết quả giả lập
-Thiết kế bộ quy tắc xử lý tranh chấp dữ liệu tự động (Field Dispute Resolution) dựa trên cấu trúc mô hình trạng thái (State Machine), cho phép tự động phát hiện và xử lý các điểm lệch dữ liệu ngay tại front-line.
+### Solution & Illustrative Results
+Architected an automated multi-source data reconciliation and field dispute resolution engine based on a comprehensive State Machine model, resolving transactional mismatches directly at the frontline.
 
-| Chỉ số đo lường (KPIs) | Kết quả đạt được |
+| Performance Indicators (KPIs) | Modeled Outcomes |
 |---|---:|
-| Tự động hóa xử lý tranh chấp dữ liệu thanh toán | Đạt 85% |
-| Thời gian phê duyệt và tạo báo giá | Giảm 50% |
-| Tỷ lệ khiếu nại sai lệch từ hiện trường | Giảm từ 18% xuống 3% |
+| Automated Payment Mismatch Reconciliation | 85% |
+| Quotation Generation & Approval Velocity | -50% |
+| Frontline Data Conflict Exception Rate | 18% → 3% |
 
-*Chi tiết deliverable:* [📁 Khám phá thư mục dự án 03-quote-payment](./03-quote-payment)
+*Explore Deliverables:* [📁 View Project Folder (03-quote-payment)](./03-quote-payment)
 
 ---
 
-## 🔄 Business Analysis Framework
+## 🔄 My Business Analysis Framework
 
-Tôi tiếp cận việc phân tích và thiết kế hệ thống theo một khung tư duy chặt chẽ nhằm đảm bảo tính toàn vẹn của giải pháp:
+I approach system analysis and architectural design using a rigorous, end-to-end framework to guarantee solution integrity:
 
 ```text
-XÁC ĐỊNH BÀI TOÁN KINH DOANH
-            │
-            ▼
-KHẢO SÁT HIỆN TRẠNG (AS-IS) & ĐỊNH VỊ ĐIỂM NGHẼN
-            │
-            ▼
-MÔ HÌNH HÓA QUY TRÌNH MỚI (TO-BE & BPMN)
-            │
-            ▼
-THIẾT KẾ QUY TẮC LOGIC HỆ THỐNG & ĐỐI SOÁT DỮ LIỆU
-            │
-            ▼
-PHỐI HỢP TRIỂN KHAI & ĐO LƯỜNG CHỈ SỐ GIÁ TRỊ (KPI)
+BUSINESS PROBLEM IDENTIFICATION
+               │
+               ▼
+AS-IS CURRENT-STATE ANALYSIS & BOTTLENECK DISCOVERY
+               │
+               ▼
+TO-BE FUTURE-STATE PROCESS MODELING (BPMN 2.0)
+               │
+               ▼
+SYSTEM LOGIC DESIGN & MULTI-SOURCE DATA VALIDATION RULES
+               │
+               ▼
+CROSS-FUNCTIONAL DELIVERY, UAT VALIDATION & KPI MEASUREMENT
 ```
 
 ---
 
 ## 🧠 Technical Skills & Competencies
 
-| Lĩnh vực | Công nghệ & Kỹ năng |
+| Discipline | Technologies & Competencies |
 |---|---|
-| **Business Analysis** | Requirements Elicitation, User Stories, Data Exceptional Handling, UAT |
+| **Business Analysis** | Requirements Elicitation, User Stories, Data Exception Handling, UAT |
 | **Process & Modeling** | BPMN 2.0, Value Stream Mapping (VSM), As-Is/To-Be Mapping, State Machine |
 | **Systems & Architecture**| Data Flow Diagram (DFD), Enterprise Systems, Migration & Modernization |
 | **Frameworks** | Agile, Scrum (Professional Scrum Product Owner - PSPO II) |
-| **UX Mindset** | Persona Context, User Flow Optimization, Screen Layout Logic |
+| **UX Mindset** | User Flow Optimization, Screen Layout Logic, Persona Context |
 
 ---
 
 ## 🤝 Contact & Connection
 
-Tôi luôn cởi mở đón nhận các cơ hội hợp tác và thử thách mới trong vai trò Senior Business Analyst hoặc Product Owner cho các hệ thống phức tạp. 
+I am always open to exploring professional opportunities and strategic challenges as a Senior Business Analyst, Systems Analyst, or Product Owner for complex enterprise ecosystems.
 
-- **GitHub:** https://github.com
-- **LinkedIn:** [Kết nối với tôi trên LinkedIn](#)
+- **GitHub:** https://github.com/kieuphan94/
+- **LinkedIn Profile:** https://www.linkedin.com/in/phuongkieuphan/
+- **Portfolio Site (Wix):** [View UX & Functional Layouts](https://vibe.wix.com/projects/a255e489-4a79-4bc1-9364-d0209b935e42/v/editor)
+- **Professional Credential:** [Verify PSPO II Certification on Credly](https://www.credly.com/earner/earned/badge/bc2c4087-29fe-428c-b690-4d268edeed75)
 
 ---
-*Hệ thống tài liệu được xây dựng và duy trì bởi Kieu Phan.*
+*Built and maintained by Kieu Phan.*
