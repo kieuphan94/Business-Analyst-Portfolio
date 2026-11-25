@@ -98,6 +98,7 @@ Field visibility resolves against a three-tier permission model, evaluated per h
 | 4 | Billing is the source of truth when CRM and Billing conflict |
 
 ---
+<img width="1523" height="784" alt="image" src="https://github.com/user-attachments/assets/d9fc2cf3-f00e-4f01-89a4-60f5024d513d" />
 
 # FUNC-01 — Customer Search & Identity Recognition
 
