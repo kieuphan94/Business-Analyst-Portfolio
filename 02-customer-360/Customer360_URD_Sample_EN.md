@@ -349,7 +349,7 @@ Beyond the ACs, the following conditions are detected and routed for review (fla
 
 ---
 
-## Appendix A — Logical ERD (Mermaid, renders on GitHub)
+## Appendix A — Logical ERD (Mermaid)
 
 > GitHub renders the diagram below automatically. (Code-fence languages like `dbml` only show as text — use Mermaid when you need a rendered picture in a README/GitHub.)
 
