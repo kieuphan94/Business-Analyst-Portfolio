@@ -351,8 +351,6 @@ Beyond the ACs, the following conditions are detected and routed for review (fla
 
 ## Appendix A — Logical ERD (Mermaid)
 
-> GitHub renders the diagram below automatically. (Code-fence languages like `dbml` only show as text — use Mermaid when you need a rendered picture in a README/GitHub.)
-
 ```mermaid
 erDiagram
   SOURCE_INDIVIDUAL        ||--o{ INDIVIDUAL_IDENTITY_LINK : "source"
@@ -431,5 +429,6 @@ erDiagram
 ---
 
 ## Appendix B — Logical ERD (DBML, paste into dbdiagram.io)
-<img width="1819" height="1382" alt="v2-360-dmbl" src="https://github.com/user-attachments/assets/3c377223-bf9b-458d-a444-21cc202431ee" />
+
+<img width="2038" height="1435" alt="Bản rút gọn" src="https://github.com/user-attachments/assets/b8cac02a-ac6c-46e0-aa07-5895eb246668" />
 
