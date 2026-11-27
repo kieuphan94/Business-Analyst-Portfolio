@@ -428,7 +428,7 @@ erDiagram
 
 ---
 
-## Appendix B — Logical ERD (DBML, paste into dbdiagram.io)
+## Appendix B — Logical ERD
 
 <img width="2038" height="1435" alt="Bản rút gọn" src="https://github.com/user-attachments/assets/b8cac02a-ac6c-46e0-aa07-5895eb246668" />
 
